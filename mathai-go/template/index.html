@@ -9,7 +9,7 @@
         <div class="grid-container">
             <header class="header">
                 <div class="brand">
-                    <button onclick="openMenu()">
+                    <button class="" onclick="openMenu()">
                        &#9776;
                     </button>
                     <a href="index.html">Mathai go</a>
@@ -21,6 +21,7 @@
             </header>
             <aside class="sidebar">
                 <h3>Shopping Categories </h3>
+                <button class="sidebar-close-button" onclick="closeMenu()">X</button>
                 <ul>
                     <li>
                         <a href="index.html">Vegetables</a>
@@ -115,9 +116,12 @@
         </div>
         <script>
             function openMenu() {
-                document.querySelector(".sidebar").classList.as
+                document.querySelector(".sidebar").classList.add("open");
+            }
+            function closeMenu(){
+                document.querySelector(".sidebar").classList.remove("open")
             }
         </script>
         
     </body>
-</html>
+</html> 
