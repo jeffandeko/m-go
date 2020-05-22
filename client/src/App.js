@@ -1,4 +1,5 @@
 import React from "react";
+import Data from './data';
 import "./App.css";
 
 function App() {
@@ -39,20 +40,21 @@ function App() {
       <main className="main">
         <div className="content">
           <ul className="products">
-            <li>
-              <div className="product">
-                <img
-                  className="product-image"
-                  src="/images/d1.jpg"
-                  alt="product"/>
-                <div className="product-name">
-                  <a href="product.html">Fresh Tomatoes</a>
+            {
+              Data.products.map(product =>
+                <li>
+                <div className="product">
+                  <img
+                    className="product-image" src={product.images} alt="product"/>
+                  <div className="product-name">
+                    <a href="product.html">{product.name}</a>
+                  </div>
+                  <div className="product-brand">{product.brand}r</div>
+                  <div className="product-price">{product.price} </div>
+                  <div className="product-rating">{product.rating} Satr {product.numreviews}</div>
                 </div>
-                <div className="product-brand">money marker</div>
-                <div className="product-price">Ksh 25 </div>
-                <div className="product-rating">3.5 stars (15 reviews) </div>
-              </div>
-            </li>
+              </li>)
+            }
 
           </ul>
         </div>
